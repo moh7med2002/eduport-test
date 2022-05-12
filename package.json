@@ -9,12 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^6.2.10",
     "next": "12.1.4",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-countup": "^6.2.0",
+    "react-dom": "18.0.0",
+    "react-facebook-photo-grid": "^1.0.10",
+    "react-fb-image-grid": "^0.1.5",
+    "react-grid-gallery": "^0.5.5",
+    "react-icons": "^4.3.1",
+    "react-images": "^1.2.0-beta.7",
+    "react-photo-gallery": "^8.0.0",
+    "react-responsive-image-grid": "^1.1.0",
+    "react-responsive-masonry": "^2.1.4",
+    "swiper": "^8.1.0",
+    "use-count-up": "^3.0.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.4",
     "eslint": "8.13.0",
-    "eslint-config-next": "12.1.4"
+    "eslint-config-next": "12.1.4",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23"
   }
 }

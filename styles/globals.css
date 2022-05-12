@@ -1,16 +1,264 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Heebo', sans-serif;
+}
+body{
+    background-color: #fff;
+}
+.navItem{
+    @apply
+    p-[5px] duration-300 hover:text-[#066ac9] hover:bg-[#066bc927] hover:rounded
+                                     cursor-pointer 
+}
+.mainShadow{
+    box-shadow: 0px 0px 40px rgb(29 58 83/15%);
+}
+.wordBg{
+  background-image: url('/Images/button.png');
+}
+.btnBlueShadow{
+  box-shadow: 0 0 0 8px rgb(6 106 201 / 40%);
+}
+.ImageBg{
+  background-color: #066ac9;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+}
+iframe{
+  max-width: 100% !important;
+  /* width: auto !important;
+  height: auto !important; */
+}
+@media (max-width:992px){
+  iframe{
+    width: 600px;
+  }
+}
+@media (max-width:767px){
+  iframe{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+}
+.checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hamburger-lines .line {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0e2431;
+}
+.hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+.hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+.hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
 }
 
-* {
-  box-sizing: border-box;
+.activeBtn{
+    background-color: #066ac9;
+    color: white;
+}
+/* Start Style Swiper */
+.swiper-button-next , .swiper-button-prev{
+    background-color: black;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    display: inline-block;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.4) !important;
+    transition: .1s;
+}
+.swiper-button-next::after, .swiper-button-prev::after{
+  color: white !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+.swiper-button-next{
+  transform: translateX(100vh);
+  transition:  0.5s;
+}
+.swiper-button-prev{
+  transform: translateX(-100vh);
+  transition:  0.5s;
+}
+.mySwiper:hover .swiper-button-next , .mySwiper:hover .swiper-button-prev{
+  transform: translateX(0);
+}
+.feedBackBg{
+  background-image: url('/Images/bg1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footerItem{
+  @apply
+  text-[#cfd3d7] duration-300 hover:text-blue cursor-pointer text-[15px] mb-[6px]
+}
+
+.landingEducation{
+  background-image: url('/Images/eduBg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.overlay::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #24292d;
+  opacity: 0.5;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.whiteShadow{
+  box-shadow: 0 0 0 8px rgb(255 255 255 / 40%);
+}
+
+.ImageBefore::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(100% - 6.5px);
+  opacity: 0;
+  background-color: rgb(0, 0, 0,0.5);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 2;
+  transition: 0.3s;
+}
+.ImageBefore:hover::before{
+  opacity: 1;
+}
+.choosenSection{
+  @apply 
+  text-[#fff] bg-blue duration-300
+}
+.selectedChildSection{
+  @apply
+  text-[#fff] bg-mainBlack duration-500
+}
+
+.linerBg{
+    background: linear-gradient(360deg, #ff887c 0%, #b6325f 100%);
+}
+.overlay2::before{
+  background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+}
+
+.react-photo-gallery--gallery img{
+  margin-left: 0px !important;
+  margin-right: 10px !important;
+  border-radius: 6px !important;
+}
+.react-images__view  img{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* make gellary Images */
+
+.image-card {
+  width: 30vw;
+  height: 30vw;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#lightbox-img {
+  height: 80vh;
+  max-width: 90vw;
+  object-fit: cover;
+}
+
+#lightbox {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.93);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Completely optional styling that has nothing to do with the lightbox*/
+.prev-gellary , .next-gellary {
+  color: white;
+  border: 2px solid #066ac9;
+  background-color: #066ac9;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.image-card:hover, button:hover {
+  cursor: pointer;
+}
+
+.image-gellary-parent::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 98%;
+  border-radius: 6px;
+  background-color: rgb(0, 0, 0,0.5);
+  z-index: 1;
+  transform-origin: center center;
+  transition: .3s;
+  opacity: 0;
+}
+.image-gellary-parent:hover::before{
+    opacity: 1;
 }
