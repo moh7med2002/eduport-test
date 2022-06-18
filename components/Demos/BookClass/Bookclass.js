@@ -149,7 +149,7 @@ export default function BookClass(){
                             <ul className="flex">
                                 {
                                     secondData.map((da,index)=>{
-                                        return <li className="mr-[-10px] border border-[#ffffff]">
+                                        return <li className="mr-[-10px] border border-[#ffffff]" key={index+"oj"}>
                                             <Image src={da.img} width="35px" height={"35px"} alt="" className=" rounded-full"/>
                                         </li>
                                     })

@@ -47,7 +47,7 @@ export default function FreeLand(){
                             <ul className="flex">
                                 {
                                     secondData.map((da,index)=>{
-                                        return <li className="mr-[-8px] ">
+                                        return <li className="mr-[-8px] " key={index="moswx"}>
                                             <Image src={da.img} width="35px" height={"35px"} alt="" className=" rounded-full"/>
                                         </li>
                                     })

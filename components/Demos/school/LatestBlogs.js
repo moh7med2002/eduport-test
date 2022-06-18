@@ -51,7 +51,7 @@ export default function LaestBlogs(){
                             Blogs.map((blog,index)=>{
                                 const checkPadding=index===0?false:true;
                                 const checkBorder=index===Blogs.length-1?true:false
-                                return <div id={blog.id} className={`flex sm:items-center pb-[30px] ${!checkBorder&&'border-b'} border-b-[#0000001a] 
+                                return <div key={blog.id} className={`flex sm:items-center pb-[30px] ${!checkBorder&&'border-b'} border-b-[#0000001a] 
                                 ${checkPadding&&'pt-[30px]'} gap-[20px] sm:gap-[30px] sm:flex-row flex-col`}>
                                     <div className="sm:w-[150px] h-[110px] bg-mainBlack rounded-lg flex items-center justify-center flex-col">
                                         <h5 className=" font-bold text-[#fff] text-[36px]">{blog.day}</h5>
