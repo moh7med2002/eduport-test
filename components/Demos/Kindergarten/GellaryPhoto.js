@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React , { useState } from 'react';
 import {BiFullscreen} from 'react-icons/bi'
-import {BsArrowLeft ,BsArrowRight} from 'react-icons/bs'
+import {IoIosArrowBack,IoIosArrowForward} from 'react-icons/io'
 function GellaryPhoto(){
 
     const images =
@@ -129,9 +129,9 @@ function GellaryPhoto(){
             {
         lightboxDisplay ? 
         <div id="lightbox" onClick={hideLightBox}>
-            <button onClick={showPrev} className="prev-gellary flex justify-center items-centers"><BsArrowLeft/></button>
+            <button onClick={showPrev} className="prev-gellary flex justify-center items-centers"><IoIosArrowBack/></button>
             <Image id="lightbox-img" src={imageToShow.image} height={imageToShow.height2} width={imageToShow.width2} alt=""></Image>
-            <button onClick={showNext} className="next-gellary flex justify-center items-center"><BsArrowRight/></button>
+            <button onClick={showNext} className="next-gellary flex justify-center items-center"><IoIosArrowForward/></button>
         </div>
     : ""
     }

@@ -8,6 +8,9 @@
 body{
     background-color: #fff;
 }
+html{
+  scroll-behavior: smooth;
+}
 .navItem{
     @apply
     p-[5px] duration-300 hover:text-[#066ac9] hover:bg-[#066bc927] hover:rounded
@@ -234,11 +237,7 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
 /*Completely optional styling that has nothing to do with the lightbox*/
 .prev-gellary , .next-gellary {
   color: white;
-  border: 2px solid #066ac9;
-  background-color: #066ac9;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  font-size: 80px;
 }
 
 .image-card:hover, button:hover {
@@ -261,4 +260,11 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
 }
 .image-gellary-parent:hover::before{
     opacity: 1;
+}
+
+/* class for image hover */
+.image-hover{
+  @apply
+  absolute w-[40px] h-[35px] rounded-[4px] bg-mainBlack top-[50%] left-[50%] translate-y-[10px] translate-x-[-50%] z-[2] flex
+  justify-center items-center cursor-pointer opacity-0 duration-300 group-hover:translate-y-[-50%] group-hover:opacity-100
 }

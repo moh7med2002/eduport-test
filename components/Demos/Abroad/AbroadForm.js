@@ -1,37 +1,41 @@
 import {FaWhatsapp,FaTty,FaGlobe,FaEnvelope} from 'react-icons/fa'
 import {MdOutlineKeyboardArrowDown} from 'react-icons/md'
 import { useState, useEffect , useRef} from 'react';
-export default function TutorContact(){
+export default function AbroadContact(){
     
     const[options,setOptions]=useState([
         {
-            text:"Select subject",
+            text:"Contact Purpose",
             isMatch:true
         },
         {
-            text:"Chemistry",
+            text:"Get In Touch With Our Executive",
             isMatch:true
         },
         {
-            text:"History",
+            text:"GRE",
             isMatch:true
         },
         {
-            text:"Language",
+            text:"IETLS",
             isMatch:true
         },
         {
-            text:"Marketing",
+            text:"PTE",
             isMatch:true
         },
         {
-            text:"Physics",
+            text:"Study In CANADA",
+            isMatch:true
+        },
+        {
+            text:"Study In U.K",
             isMatch:true
         }
     ]);
-    const [partOptions,setPartOptions]=useState(["Select subject","Chemistry","History","Language","Marketing","Physics"]);
+    const [partOptions,setPartOptions]=useState(["Contact Purpose","Get In Touch With Our Executive","GRE","IETLS","PTE","Study In CANADA",'Study In U.K']);
     const[showSelect,setShowSelect]=useState(false);
-    const[selectValue,setSelectValue]=useState("Select subject");
+    const[selectValue,setSelectValue]=useState("Contact Purpose");
     let[selectSearch,setSelectSearch]=useState("");
     
     const input=useRef(null);
@@ -45,13 +49,7 @@ export default function TutorContact(){
     
 
     const socilaData=[
-        {
-            id:"1-social",
-            key:"Eamil",
-            value:"example@gamil.com",
-            icon:FaEnvelope,
-            bg:"#f7c32e"
-        },
+        
         {
             id:"2-social",
             key:"WhatsApp number",
@@ -113,14 +111,14 @@ export default function TutorContact(){
             <div className=' container xl:px-10 px-2 grid lg:grid-cols-2 items-center gap-[40px]'>
                 
                 <div>
-                    <h3 className='font-bold text-mainBlack text-[24px] sm:text-[36px] leading-[120%] mb-[8px]'>
-                        Access the right service for your kid today!!</h3>
+                    <h3 className='font-bold text-mainBlack text-[24px] sm:text-[40px] leading-[120%] mb-[8px]'>
+                    Get in touch with us</h3>
                     <p className=' text-second text-[16px]'>
-                        Claim your free 10-minute phone call to see if we are right for your kid.</p>
-                    <div className='mt-[50px] grid sm:grid-cols-2 gap-x-[30px] gap-y-[38px]'>
+                    Claim your free 10-minute phone call to see if we are right for your kid.</p>
+                    <div className='mt-[50px] grid sm:grid-cols-2 gap-x-[30px] gap-y-[38px] '>
                         {
                             socilaData.map(data=>{
-                                return <div key={data.id} className="bg-[#fff] mainShadow rounded-[8px] px-[20px] py-[20px] relative">
+                                return <div key={data.id+"kkhy"} className="bg-[#fff] mainShadow rounded-[8px] px-[20px] py-[20px] relative">
                                     <h5 className='font-bold text-mainBlack'>{data.key}</h5>
                                     <p className='text-mainBlack text-[15px] mt-[8px]'>{data.value}</p>
                                     <span style={{backgroundColor:data.bg}} className="w-[55px] h-[55px] rounded-full flex justify-center items-center
@@ -136,12 +134,12 @@ export default function TutorContact(){
                     <form onSubmit={e=>e.preventDefault()} className="bg-[#fff] mainShadow rounded-lg px-[20px] sm:px-[35px] py-[30px]">
                         <div className='grid  sm:grid-cols-2 gap-[20px] mb-5'>
                             <div>
-                                <label className='text-second text-[15px] mb-[8px] inline-block'>First name *</label>
+                                <label className='text-second text-[15px] mb-[8px] inline-block'>Name *</label>
                                 <input type={"text"} name="firstName" className='border border-[#dde0e3] rounded px-[10px] py-[7px] focus:border-blue 
                                 focus:outline-none w-[100%]'/>
                             </div>
                             <div>
-                                <label className='text-second text-[15px] mb-[8px] inline-block'>Last name *</label>
+                                <label className='text-second text-[15px] mb-[8px] inline-block'>Phone number *</label>
                                 <input type={"text"} name="lastName"className='border border-[#dde0e3] rounded px-[10px] py-[7px] focus:border-blue 
                                 focus:outline-none w-[100%]'/>
                             </div>
@@ -149,19 +147,19 @@ export default function TutorContact(){
 
                         <div className='grid  sm:grid-cols-2 gap-[20px]'>
                             <div>
-                                <label className='text-second text-[15px] mb-[8px] inline-block'>Email *</label>
+                                <label className='text-second text-[15px] mb-[8px] inline-block'>WhatsApp number *</label>
                                 <input type={"text"} name="email"className='border border-[#dde0e3] rounded px-[10px] py-[7px] focus:border-blue 
                                 focus:outline-none w-[100%]'/>
                             </div>
                             <div>
-                                <label className='text-second text-[15px] mb-[8px] inline-block'>Phone number *</label>
+                                <label className='text-second text-[15px] mb-[8px] inline-block'>Email *</label>
                                 <input type={"text"} name="phone"className='border border-[#dde0e3] rounded px-[10px] py-[7px] focus:border-blue 
                                 focus:outline-none w-[100%]'/>
                             </div>
                         </div>
 
                         <div className='mt-[20px]'>
-                            <label className='text-second text-[15px] mb-[8px] inline-block w-[100%]'>Select subject</label>
+                            <label className='text-second text-[15px] mb-[8px] inline-block w-[100%]'>Contact Purpose</label>
                             <div className='border border-[#dde0e3] rounded px-[0px] pt-[8px] relative'>
                                 <div className='flex justify-between items-center px-[10px] py-[6px] cursor-pointer' onClick={()=>setShowSelect(p=>!p)}>
                                     <span className='text-[#404448] text-[15px]'>{selectValue}</span> 
@@ -176,7 +174,7 @@ export default function TutorContact(){
                                     {
                                         partOptions.length!==0?
                                         partOptions.map((option,id)=>{
-                                            return <div key={id+"cmcj"}
+                                            return <div key={id+"cmiq"}
                                             className='text-second text-[15px] duration-300 hover:bg-[#056bc91a] cursor-pointer px-[6px] py-[5px] hover:text-blue'
                                             onClick={()=>handleClick(option)}>
                                                 {option}</div>
@@ -196,7 +194,7 @@ export default function TutorContact(){
                         </div>
 
                         <button type='submit' className='bg-blue w-[140px] h-[42px] rounded-[4px] mt-[10px] text-[#fff] text-[15px] duration-300 hover:opacity-90 mb-[25px]'>
-                            Send message</button>
+                            Send Inquiry</button>
                     </form>
                 </div>
 

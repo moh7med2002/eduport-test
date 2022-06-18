@@ -50,11 +50,11 @@ function PagesNav({showSubMenu,allMenu}){
                         <ul className={`xl:absolute xl:top-0 xl:left-[110%] xl:w-[240px] w-[100%] bg-[#fff] mainShadow p-[20px] rounded
                         ${allLinks.courses?"block":"hidden"}`}>
                             <ul className='py-[7px]'>
-                                <Link href={"#"}><li className='navItem'>Course Categories</li></Link>
+                                <Link href={"/pagess/course/category"}><li className='navItem'>Course Categories</li></Link>
                             </ul>
                             <hr/>
                             <ul className='py-[7px]'>
-                                <Link href={"#"}><li className='navItem'>Course Grid Classic</li></Link>
+                                <Link href={"/pagess/course/gridClassic"}><li className='navItem'>Course Grid Classic</li></Link>
                                 <Link href={"#"}><li className='navItem'>Course Grid Minimal</li></Link>
                             </ul>
                             <hr/>

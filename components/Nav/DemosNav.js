@@ -20,21 +20,20 @@ function DemosNav({showSubMenu,allMenu}){
                     <Link href={"/Home/university"}><li className='navItem' onClick={()=>showSubMenu("demos")}>Home University</li></Link>
                     <Link href={"/Home/kindergarten"}><li className='navItem' onClick={()=>showSubMenu("demos")} >Home Kindergarten</li></Link>
                     <Link href={"/Home/tutor"}><li className='navItem'  onClick={()=>showSubMenu("demos")}>Home Tutor </li></Link>
-                    <Link href={"#"}><li className='navItem flex items-center'>Home School 
+                    <Link href={"/Home/school"}><li className='navItem flex items-center'>Home School 
                     <span className='text-[12px] text-white font-normal bg-[#0cbc87] inline-block w-[40px] text-center
                     ml-[5px] rounded-[4px]'>New</span>
                     </li></Link>
-                    <Link href={"#"}><li className='navItem flex items-center'>Home Abroad
+                    <Link href={"/Home/abroad"}><li className='navItem flex items-center'>Home Abroad
                     <span className='text-[12px] text-white font-normal bg-[#0cbc87] inline-block w-[40px] text-center
                     ml-[5px] rounded-[4px]'>New</span>
                     </li></Link>
                 </ul>
                 <hr/>
                 <ul className='pt-[10px]'>
-                    <Link href={"#"}><li className='navItem'>Request a demo</li></Link>
-                    <Link href={"#"}><li className='navItem'>Book a Class</li></Link>
-                    <Link href={"#"}><li className='navItem'>Free Access</li></Link>
-                    <Link href={"#"}><li className='navItem'>Admission Form</li></Link>
+                    <Link href={"/Home/request-demo"}><li className='navItem'>Request a demo</li></Link>
+                    <Link href={"/Home/book-class"}><li className='navItem'>Book a Class</li></Link>
+                    <Link href={"/Home/freeAccess"}><li className='navItem'>Free Access</li></Link>
                 </ul>
             </div>
         </div>
