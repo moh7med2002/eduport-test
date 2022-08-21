@@ -5,7 +5,19 @@ import '../styles/globals.css'
 import { useEffect, useState } from 'react'
 import {motion,AnimatePresence} from 'framer-motion'
 import Head from 'next/head'
+import Router from 'next/router'
+import Loader from '../components/Loader'
 function MyApp({ Component, pageProps }) {
+  const[loading,setLoading]=useState(false);
+  Router.events.on('routeChangeStart',(url)=>{
+    console.log('Router changing ...'+ url);
+    setLoading(true);
+  });
+  Router.events.on('routeChangeComplete',(url)=>{
+    console.log('Router change end');
+    setLoading(false);
+  });
+
   const [showBtn,setShowBtn]=useState(false);
 
   function handleScrollClick(){
@@ -51,19 +63,25 @@ function MyApp({ Component, pageProps }) {
           <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Cairo:wght@300;700&family=Heebo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"></link>
       </Head> 
     <div className=' relative'>
-      <Navbar/>
-      <Component {...pageProps} />
-      <Footer/>
+      {
+        loading ?<Loader/>
+        :
+        <>
+        <Navbar/>
+        <Component {...pageProps} />
+        <Footer/>
 
       <AnimatePresence>
       {showBtn &&
       <motion.button className=' fixed right-[10px] bottom-[40px] z-[10] bg-blue md:w-[50px] md:h-[50px] rounded flex w-[40px] h-[40px]
       justify-center items-center duration-300 hover:bg-[#d6293e]'  onClick={handleScrollClick}
       initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.2,duration:0.5}} exit={{opacity:0 , transition:{duration:0.3}}}>
-       <AiOutlineArrowUp className='text-[20px] text-[#fff]  font-bold'/>
+      <AiOutlineArrowUp className='text-[20px] text-[#fff]  font-bold'/>
      </motion.button>
-     }
+    }
       </AnimatePresence>
+        </>
+      }
     </div>
     </>
   )
