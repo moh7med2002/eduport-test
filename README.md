@@ -14,9 +14,3 @@ Eduport is a web platform that helps students browse available courses and unive
 ## Tech Stack
 - **Next.js** – For building the frontend with server-side rendering and routing.  
 - **Tailwind CSS** – For styling and responsive design.
-
-## Installation & Setup
-1. **Clone the repository:**  
-   ```bash
-   git clone https://github.com/moh7med2002/eduport-test.git
-   cd eduport-test
