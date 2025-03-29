@@ -14,3 +14,11 @@ Eduport is a web platform that helps students browse available courses and unive
 ## Tech Stack
 - **Next.js** – For building the frontend with server-side rendering and routing.  
 - **Tailwind CSS** – For styling and responsive design.
+
+### Screenshots
+Here are some screenshots from Store:
+
+![Screenshot 1](photos/home.png)
+![Screenshot 1](photos/academy.png)
+![Screenshot 1](photos/education.png)
+![Screenshot 1](photos/kindergarten.png)
